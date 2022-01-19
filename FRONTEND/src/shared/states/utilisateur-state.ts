@@ -14,8 +14,6 @@ import { UtilisateurStateModel } from './utilisateur-state-model';
 export class UtilisateurState {
   @Selector()
   static getLoginUtilisateur(state: UtilisateurStateModel) {
-    console.log(state);
-    console.log(state.utilisateur);
     return state.utilisateur.login;
   }
 
