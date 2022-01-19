@@ -1,0 +1,18 @@
+<p>Affichage du formulaire de connexion :</p> 
+<form *ngIf="!(login$ | async)" (ngSubmit)="soumettre()" [formGroup]="formLogin">
+    <label for="login">Login : </label>
+    <input formControlName="login" name="login" type="text" /> <br/>
+    <label for="mdp">Mot de passe : </label>
+    <input formControlName="mdp" name="mdp" type="password" /> <br/>
+    <button>Connexion</button>
+</form>
+
+<div *ngIf="login$ | async; let utilisateur">
+    <p> Bienvenue {{ utilisateur }}, vous êtes connecté </p>
+    <p> Si vous souhaitez vous déconnecter, cliquez sur le bouton de déconnexion : </p>
+    <button (click)="removeUtilisateur()">Déconnexion</button>
+</div>
+
+<div *ngIf="message">
+  <p> {{ message }} </p>
+</div>

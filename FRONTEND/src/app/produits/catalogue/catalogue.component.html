@@ -1,0 +1,19 @@
+<div>
+    <p>Affichage des produits du catalogue :</p> 
+    <p>Entrez le nom d'un produit pour filter la liste :</p>
+
+    <input class="form-control mb-4 w-25" type="search" (keydown)="filtrerListe($event)">
+
+    <p>Ou cliquez sur le nom d'un des produits pour afficher le détail :</p>
+
+    <div *ngFor="let produit of listeProduits">
+        <ul>
+            <li><a [routerLink]="['/produits/detailProduit/',produit.id_produit]">{{ produit.nom }}</a></li>
+            <button (click)="addProduit(produit)"> Ajouter au Panier </button>
+        </ul>
+    </div>
+
+    <div *ngIf="listeProduits?.length == 0">
+        Aucun produit trouvé avec ce nom.
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<p>Affichage du formulaire d'inscription :</p> 
+<form (ngSubmit)="soumettre()" [formGroup]="formSignin">
+    <label for="nom">Nom : </label>
+    <input formControlName="nom" name="nom" type="text" /> <br/>
+    <label for="prenom">Prénom : </label>
+    <input formControlName="prenom" name="prenom" type="text" /> <br/>
+    <label for="login">Login : </label>
+    <input formControlName="login" name="login" type="text" /> <br/>
+    <label for="mdp">Mot de passe : </label>
+    <input formControlName="mdp" name="mdp" type="password" /> <br/>
+    <button>S'enregistrer</button>
+</form>
+
+<div *ngIf="message">
+    <p> {{ message }} </p>
+</div>

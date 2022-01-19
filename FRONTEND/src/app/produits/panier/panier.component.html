@@ -1,0 +1,11 @@
+<div>
+  <p>Affichage des produits du panier :</p> 
+
+  <button class="mb-4" (click)="removeProduits()"> Payer mon panier </button>
+      <div *ngFor="let produit of liste$ | async">
+          <ul>
+              <li>{{ produit.nom }}</li>
+              <button (click)="removeProduit(produit)"> Supprimer du Panier </button>
+          </ul>
+      </div>
+</div>

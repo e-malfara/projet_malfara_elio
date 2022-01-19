@@ -1,0 +1,5 @@
+.*/
+/build
+/BACKEND/vendor
+/FRONTEND/node_modules
+/FRONTEND/dist
