@@ -36,12 +36,11 @@ export class ProduitState {
     { payload }: RemoveProduit
   ) {
     const state = getState();
-    let etatProduit = state.produits;
-    etatProduit.splice(etatProduit.indexOf(payload), 1);
     patchState({
-        produits: etatProduit
+        produits: state.produits.filter(item => item != payload),
     });
   }
+
   @Action(RemoveProduits)
   removeAll(
     { patchState }: StateContext<ProduitStateModel>

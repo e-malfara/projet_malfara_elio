@@ -19,6 +19,7 @@ export class PanierComponent implements OnInit {
   }
 
   removeProduit(produit: Produit) {
+    console.log(produit);
     this.store.dispatch(new RemoveProduit(produit));
   }
 

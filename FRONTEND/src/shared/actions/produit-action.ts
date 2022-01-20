@@ -13,7 +13,7 @@ export class RemoveProduit {
 }
 
 export class RemoveProduits {
-  static readonly type = '[Produit] Remove';
+  static readonly type = '[Produit] RemoveAll';
 
   constructor() {}
 }
